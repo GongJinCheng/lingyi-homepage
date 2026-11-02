@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#eee6d7">
-  <meta name="description" content="零一的个人说明书：系统开发、听歌，以及尚未完工的个人项目。">
+  <meta name="description" content="零一的个人说明书：系统开发、听歌，以及几个云端小流程。">
   <meta name="robots" content="noindex">
   <meta property="og:title" content="零一 — 人还在，程序不一定。">
-  <meta property="og:description" content="零一的个人说明书：系统开发、听歌，以及尚未完工的个人项目。">
+  <meta property="og:description" content="零一的个人说明书：系统开发、听歌，以及几个云端小流程。">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23101310'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='monospace' font-size='32' font-weight='700' fill='%23e18a5e'%3E01%3C/text%3E%3C/svg%3E">
   <title>零一 — 人还在，程序不一定。</title>
@@ -408,6 +408,54 @@
     .progress-caption { display:flex; justify-content:space-between; margin-bottom:8px; color:var(--muted); font:10px var(--mono); }
     .progress-track { height:4px; overflow:hidden; background:rgba(37,43,41,.2); }
     .progress-track span { display:block; height:100%; width:100%; background:var(--glow-1); transform:scaleX(.5); transform-origin:left; }
+    .project-feature { overflow:hidden; border:1px solid var(--line); background:var(--panel); box-shadow:5px 5px 0 rgba(37,43,41,.08); }
+    .project-feature-head { display:flex; justify-content:space-between; gap:16px; padding:13px 22px; border-bottom:1px solid var(--line); color:var(--muted); font:11px/1.6 var(--mono); letter-spacing:.05em; }
+    .feature-status { color:var(--glow-2); text-align:right; }
+    .project-feature-body { display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(28px,5vw,70px); padding:30px; }
+    .project-feature-copy h3 { margin:0 0 13px; color:var(--glow-1); font-size:clamp(27px,3vw,38px); line-height:1.3; letter-spacing:-.035em; }
+    .project-feature-copy > p { max-width:45ch; margin:0; color:var(--ink); font-size:14px; line-height:1.9; }
+    .project-feature-proof { display:flex; flex-direction:column; gap:6px; margin-top:23px; padding-top:13px; border-top:1px solid var(--line); color:var(--glow-2); font-size:12px; line-height:1.7; }
+    .project-feature-proof small { color:var(--muted); font-size:11px; }
+    .project-flow-wrap { align-self:center; padding:18px 20px; border-left:1px solid var(--line); background:rgba(216,205,183,.18); }
+    .flow-label,.supporting-label { margin:0 0 11px; color:var(--muted); font:11px/1.6 var(--mono); letter-spacing:.06em; }
+    .project-flow { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:0; padding:0; list-style:none; }
+    .project-flow li { display:flex; align-items:center; gap:10px; min-height:42px; padding:8px 10px; border:1px solid var(--line); background:var(--paper); }
+    .project-flow li span { color:var(--glow-1); font:11px var(--mono); }
+    .project-flow li b { font-size:12px; font-weight:650; }
+    .supporting-projects { margin-top:23px; }
+    .supporting-label { margin-bottom:0; padding:0 0 7px; border-bottom:1px solid var(--line); }
+    .supporting-project { display:grid; grid-template-columns:42px minmax(0,1fr) minmax(165px,.38fr); align-items:center; gap:16px; padding:16px 9px; border-bottom:1px solid var(--line); }
+    .supporting-index { align-self:start; padding-top:3px; color:var(--glow-1); font:12px var(--mono); }
+    .supporting-title-row { display:flex; align-items:baseline; flex-wrap:wrap; gap:10px; }
+    .supporting-copy h3 { margin:0; font-size:17px; font-weight:730; }
+    .supporting-status { color:var(--glow-2); font:11px/1.5 var(--mono); }
+    .supporting-copy p { margin:4px 0 0; color:var(--muted); font-size:12px; line-height:1.7; }
+    .supporting-proof { justify-self:end; color:var(--muted); font:11px/1.6 var(--mono); text-align:right; }
+    @media (max-width:1000px) {
+      .project-feature-body { gap:22px; padding:24px; }
+      .supporting-project { grid-template-columns:34px minmax(0,1fr) minmax(140px,.38fr); gap:12px; }
+      .supporting-proof { font-size:10px; }
+    }
+    @media (max-width:700px) {
+      .project-feature-head { padding:11px 15px; font-size:10px; }
+      .project-feature-body { grid-template-columns:1fr; gap:20px; padding:19px 17px; }
+      .project-feature-copy h3 { font-size:25px; }
+      .project-feature-copy > p { font-size:13px; }
+      .project-feature-proof { margin-top:17px; font-size:11px; }
+      .project-feature-proof small { font-size:10px; }
+      .project-flow-wrap { padding:13px 0 0; border-left:0; border-top:1px solid var(--line); background:transparent; }
+      .project-flow { gap:6px; }
+      .project-flow li { min-height:39px; padding:7px; gap:7px; }
+      .project-flow li b { font-size:11px; }
+      .flow-label,.supporting-label { font-size:10px; }
+      .supporting-project { grid-template-columns:27px minmax(0,1fr); align-items:start; gap:7px 10px; padding:14px 4px; }
+      .supporting-index { grid-row:1 / span 2; font-size:11px; }
+      .supporting-title-row { gap:6px 9px; }
+      .supporting-copy h3 { font-size:15px; }
+      .supporting-status { font-size:10px; }
+      .supporting-copy p { font-size:11px; }
+      .supporting-proof { grid-column:2; justify-self:start; text-align:left; font-size:10px; }
+    }
     .footer { padding:66px 0 24px; border-top:2px solid var(--ink); }
     .footer-main { display:flex; justify-content:space-between; align-items:flex-end; gap:30px; }
     .footer h2 { font-size:clamp(34px,4vw,56px); line-height:1.25; }
@@ -567,10 +615,48 @@
 这个正在被我做完。</p><div class="card-bottom"><div class="progress-box"><div class="progress-caption"><span data-text="busy.project.progress">完成度 0.5（二进制不支持）</span><span data-text="busy.project.joke"></span></div><div class="progress-track" aria-hidden="true"><span></span></div></div></div></article>
         </div>
       </section>
+      <section class="section" id="projects" aria-labelledby="projectsTitle">
+        <div class="section-heading reveal">
+          <div><p class="kicker" data-text="projects.kicker">03 / CLOUD FUNCTIONS</p><h2 id="projectsTitle" data-text="projects.title">云函数项目</h2></div>
+          <p class="section-aside" data-text="projects.aside">发票核验是主角，另外两件也在跑。</p>
+        </div>
+        <article class="project-feature reveal">
+          <div class="project-feature-head"><span data-text="projects.invoice.eyebrow">AUTOMATION / 01</span><span class="feature-status" data-text="projects.invoice.status">已部署 · 批次链路已验证</span></div>
+          <div class="project-feature-body">
+            <div class="project-feature-copy">
+              <h3 data-text="projects.invoice.title">批量发票自动核验</h3>
+              <p data-text="projects.invoice.body">把逐笔查合同、核发票、登记结果，改成可分批续跑的自动流程；重复写入有保护，异常留给人工判断。</p>
+              <div class="project-feature-proof"><span data-text="projects.invoice.result">批次结果对照：与原方案分类一致。</span><small data-text="projects.invoice.followup">触发条件调整：验证中。</small></div>
+            </div>
+            <div class="project-flow-wrap">
+              <p class="flow-label" data-text="projects.invoice.flowLabel">PROCESS / 处理流程</p>
+              <ol class="project-flow">
+                <li><span>01</span><b data-text="projects.invoice.step1">按批次读取</b></li>
+                <li><span>02</span><b data-text="projects.invoice.step2">规则核验</b></li>
+                <li><span>03</span><b data-text="projects.invoice.step3">回写结果</b></li>
+                <li><span>04</span><b data-text="projects.invoice.step4">分轮续跑</b></li>
+              </ol>
+            </div>
+          </div>
+        </article>
+        <div class="supporting-projects">
+          <p class="supporting-label" data-text="projects.smallLabel">SIDE FLOWS / 配套流程</p>
+          <article class="supporting-project reveal">
+            <span class="supporting-index">02</span>
+            <div class="supporting-copy"><div class="supporting-title-row"><h3 data-text="projects.links.title">云端短链接转换</h3><span class="supporting-status" data-text="projects.links.status">已验证</span></div><p data-text="projects.links.body">换目标，不换分享链接。</p></div>
+            <span class="supporting-proof" data-text="projects.links.proof">签名校验 · 短码 · 跳转</span>
+          </article>
+          <article class="supporting-project reveal">
+            <span class="supporting-index">03</span>
+            <div class="supporting-copy"><div class="supporting-title-row"><h3 data-text="projects.receipt.title">回单附件通知</h3><span class="supporting-status" data-text="projects.receipt.status">已部署 · 新版联调中</span></div><p data-text="projects.receipt.body">自动找回单附件并通知对应人员；全部发送请求被平台接受后才回写状态。</p></div>
+            <span class="supporting-proof" data-text="projects.receipt.proof">附件校验 · 重复拦截 · 状态回写</span>
+          </article>
+        </div>
+      </section>
       <footer class="footer" aria-labelledby="footerTitle">
-        <div class="footer-main reveal"><div><p class="kicker" data-text="footer.kicker">03 / KEEP IN TOUCH</p><h2 id="footerTitle" data-text="footer.title">找我可以。
+        <div class="footer-main reveal"><div><p class="kicker" data-text="footer.kicker">04 / KEEP IN TOUCH</p><h2 id="footerTitle" data-text="footer.title">找我可以。
 「很简单」不行。</h2><p class="footer-note" data-text="footer.note">有事发邮件。口头需求，我只会点头，不会实现。</p></div><div class="contacts" id="contacts"></div></div>
-        <div class="footer-bottom"><span data-text="footer.end">本页已到底。项目还没有。</span><span class="footer-secret" data-text="footer.secret">隐藏测试：对名字多一点耐心 × 5</span></div>
+        <div class="footer-bottom"><span data-text="footer.end">本页已到底。待办还在加载。</span><span class="footer-secret" data-text="footer.secret">隐藏测试：对名字多一点耐心 × 5</span></div>
       </footer>
     </main>
   </div>
@@ -580,7 +666,7 @@
     // 01 / 文案集中区：先改这里。花括号【】是待替换项；不要把用户输入交给 innerHTML。
     const CONTENT = {
       name: "零一",
-      meta: { title: "{name} — 人还在，程序不一定。", description: "{name}的个人说明书：系统开发、听歌，以及尚未完工的个人项目。" },
+      meta: { title: "{name} — 人还在，程序不一定。", description: "{name}的个人说明书：系统开发、听歌，以及云函数项目。" },
       ui: {
         skip: "跳到正文", extension: ".exe", pause: "暂停动效", resume: "开启动效",
         reduced: "系统已开启减少动态效果", nameHint: "连续点击名字五次，有隐藏测试", themeAction: "切换说明书标记色，当前：",
@@ -617,11 +703,17 @@
         music: { tag: "PROCESS 02 / 听歌", title: "耳机一戴，\n需求勿扰。", body: "喜欢歌词一句句跳出来的全屏。\n本月单曲循环：同一首。\n具体次数不方便透露。", caption: "没在播放（版权还没谈下来）" },
         project: { tag: "PROCESS 03 / 折腾", title: "在建：很多。\n完工：另说。", body: "上一版个人主页做到一半下线了。\n这个正在被我做完。", progress: "完成度 0.5（二进制不支持）", joke: "" }
       },
+      projects: {
+        kicker: "03 / CLOUD FUNCTIONS", title: "云函数项目", aside: "发票核验是主角，另外两件也在跑。", smallLabel: "SIDE FLOWS / 配套流程",
+        invoice: { eyebrow: "AUTOMATION / 01", status: "已部署 · 批次链路已验证", title: "批量发票自动核验", body: "把逐笔查合同、核发票、登记结果，改成可分批续跑的自动流程；重复写入有保护，异常留给人工判断。", result: "批次结果对照：与原方案分类一致。", followup: "触发条件调整：验证中。", flowLabel: "PROCESS / 处理流程", step1: "按批次读取", step2: "规则核验", step3: "回写结果", step4: "分轮续跑" },
+        links: { title: "云端短链接转换", status: "已验证", body: "换目标，不换分享链接。", proof: "签名校验 · 短码 · 跳转" },
+        receipt: { title: "回单附件通知", status: "已部署 · 新版联调中", body: "自动找回单附件并通知对应人员；全部发送请求被平台接受后才回写状态。", proof: "附件校验 · 重复拦截 · 状态回写" }
+      },
       contacts: [
         { label: "Email", value: "gongjcheng@163.com", kind: "email" },
         { label: "GitHub", value: "https://github.com/GongJinCheng", kind: "url" }
       ],
-      footer: { kicker: "03 / KEEP IN TOUCH", title: "找我可以。\n「很简单」不行。", note: "有事发邮件。口头需求，我只会点头，不会实现。", end: "本页已到底。项目还没有。", secret: "隐藏测试：对名字多一点耐心 × 5" },
+      footer: { kicker: "04 / KEEP IN TOUCH", title: "找我可以。\n「很简单」不行。", note: "有事发邮件。口头需求，我只会点头，不会实现。", end: "本页已到底。待办还在加载。", secret: "隐藏测试：对名字多一点耐心 × 5" },
       egg: { fixed: "✓ 已修复（并没有）", consoleArt: "  +--------------------+\n  |    ( . _ . )       |\n  |    human.exe       |\n  |    status: maybe   |\n  +--------------------+", consoleNote: "同行你好。你能打开控制台，已经超过了本项目的测试覆盖率。" }
     };
 
